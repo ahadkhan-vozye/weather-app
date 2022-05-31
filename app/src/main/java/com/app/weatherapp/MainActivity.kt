@@ -88,10 +88,15 @@ class MainActivity : AppCompatActivity(), OnMenuItemClickListener<PowerMenuItem>
         }
 
         binding.refreshLayout.setOnRefreshListener {
-            if (isOnline(this)) {
-                getDataFromRaw()
+            if (binding.switchOnline.isChecked) {
+                if (isOnline(this)) {
+                    getDataFromService()
+                } else {
+                    binding.switchOnline.isChecked = false
+                    Toast.makeText(this, "No internet connection", Toast.LENGTH_SHORT).show()
+                }
             } else {
-                getDataFromService()
+                getDataFromRaw()
             }
             binding.refreshLayout.isRefreshing = false
         }

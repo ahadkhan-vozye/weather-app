@@ -6,26 +6,26 @@
         {
             "dt": 1654041600,
             "main": {
-                "temp": 290.59,
-                "feels_like": 290.61,
+                "temp": 289.67,
+                "feels_like": 289.73,
                 "temp_min": 289.07,
-                "temp_max": 290.59,
-                "pressure": 1013,
-                "sea_level": 1013,
+                "temp_max": 289.67,
+                "pressure": 1012,
+                "sea_level": 1012,
                 "grnd_level": 1002,
-                "humidity": 85,
-                "temp_kf": 1.52
+                "humidity": 90,
+                "temp_kf": 0.6
             },
             "weather": [
                 {
-                    "id": 801,
-                    "main": "Clouds",
-                    "description": "few clouds",
-                    "icon": "02n"
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01n"
                 }
             ],
             "clouds": {
-                "all": 19
+                "all": 0
             },
             "wind": {
                 "speed": 1.68,
@@ -42,15 +42,15 @@
         {
             "dt": 1654052400,
             "main": {
-                "temp": 289.09,
-                "feels_like": 288.96,
+                "temp": 289.1,
+                "feels_like": 289.05,
                 "temp_min": 287.96,
-                "temp_max": 289.09,
-                "pressure": 1014,
-                "sea_level": 1014,
+                "temp_max": 289.1,
+                "pressure": 1013,
+                "sea_level": 1013,
                 "grnd_level": 1002,
-                "humidity": 85,
-                "temp_kf": 1.13
+                "humidity": 88,
+                "temp_kf": 1.14
             },
             "weather": [
                 {
@@ -78,15 +78,15 @@
         {
             "dt": 1654063200,
             "main": {
-                "temp": 292.86,
-                "feels_like": 292.58,
-                "temp_min": 292.86,
+                "temp": 291.8,
+                "feels_like": 291.63,
+                "temp_min": 291.8,
                 "temp_max": 292.86,
-                "pressure": 1015,
-                "sea_level": 1015,
+                "pressure": 1014,
+                "sea_level": 1014,
                 "grnd_level": 1003,
-                "humidity": 65,
-                "temp_kf": 0
+                "humidity": 73,
+                "temp_kf": -1.06
             },
             "weather": [
                 {
@@ -97,7 +97,7 @@
                 }
             ],
             "clouds": {
-                "all": 22
+                "all": 15
             },
             "wind": {
                 "speed": 0.97,
@@ -1460,7 +1460,7 @@
         "country": "RS",
         "population": 0,
         "timezone": 7200,
-        "sunrise": 1653965776,
-        "sunset": 1654020942
+        "sunrise": 1654052142,
+        "sunset": 1654107394
     }
 }
