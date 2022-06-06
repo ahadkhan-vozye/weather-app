@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
-import com.app.weatherapp.adapter.CardsAdapter
+import com.app.weatherapp.adapter.CardsParentAdapter
 import com.app.weatherapp.databinding.ActivityMainBinding
 import com.app.weatherapp.model.MainList
 import com.app.weatherapp.model.WeatherServiceResponse
@@ -27,8 +27,6 @@ import com.skydoves.powermenu.OnMenuItemClickListener
 import com.skydoves.powermenu.PowerMenu
 import com.skydoves.powermenu.PowerMenuItem
 import java.io.*
-import java.text.SimpleDateFormat
-import java.util.*
 
 
 class MainActivity : AppCompatActivity(), OnMenuItemClickListener<PowerMenuItem> {
@@ -141,20 +139,46 @@ class MainActivity : AppCompatActivity(), OnMenuItemClickListener<PowerMenuItem>
     }
 
     private fun initData(weatherResponse: List<MainList>) {
-        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-        val currentDateTime: String = sdf.format(Date())
-        val todayList = ArrayList<MainList>()
+        if (weatherResponse.isNullOrEmpty())
+            return
 
-        for (i in weatherResponse.indices) {
-            if (currentDateTime == weatherResponse[i].dtTxt.substring(0, 10)) {
-                todayList.add(weatherResponse[i])
+//        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+//        val currentDateTime: String = sdf.format(Date())
+        val todayList = ArrayList<ArrayList<MainList>>()
+
+        var tempList = ArrayList<MainList>()
+        var k = 0
+        while (k < weatherResponse.size) {
+
+            tempList.add(weatherResponse[k])
+            k++
+
+            if (k >= weatherResponse.size)
+                break
+
+            while (tempList[tempList.size - 1].dtTxt.substring(
+                    0,
+                    10
+                ) == weatherResponse[k].dtTxt.substring(0, 10)
+            ) {
+                tempList.add(weatherResponse[k])
+                k++
+                if (k >= weatherResponse.size)
+                    break
             }
+            todayList.add(tempList)
+
+            tempList = ArrayList()
+//
+//            if (currentDateTime == weatherResponse[i].dtTxt.substring(0, 10)) {
+//                todayList.add(weatherResponse[i])
+//            }
         }
 
         binding.recyclerView.apply {
             layoutManager =
                 LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
-            adapter = CardsAdapter(this@MainActivity, todayList)
+            adapter = CardsParentAdapter(this@MainActivity, todayList)
             onFlingListener = null
             LinearSnapHelper().attachToRecyclerView(this)
         }

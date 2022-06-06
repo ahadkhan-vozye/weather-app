@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.weatherapp.R
 import com.app.weatherapp.databinding.HorRowBinding
+import com.app.weatherapp.databinding.HorRowChildBinding
 import com.app.weatherapp.model.MainList
 import com.bumptech.glide.Glide
 
@@ -17,7 +18,7 @@ class CardsAdapter(val context: Context, val cards: ArrayList<MainList>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardsAdapter.ViewHolder {
         return ViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.hor_row, parent, false)
+                .inflate(R.layout.hor_row_child, parent, false)
         )
     }
 
@@ -53,6 +54,6 @@ class CardsAdapter(val context: Context, val cards: ArrayList<MainList>) :
     override fun getItemCount() = cards.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val binding = HorRowBinding.bind(view)
+        val binding = HorRowChildBinding.bind(view)
     }
 }

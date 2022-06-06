@@ -1,85 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="@dimen/_200sdp"
     app:cardElevation="@dimen/_5sdp"
     app:cardUseCompatPadding="true"
     app:cardCornerRadius="@dimen/_10sdp"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="@dimen/_10sdp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:gravity="center_vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/temp_tv"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_16ssp"
-                android:text="30 cntigtae"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <ImageView
-                android:layout_marginStart="@dimen/_10sdp"
-                android:id="@+id/weather_iv"
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_50sdp" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/min_temp_tv"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_12ssp"
-            android:text="30 cntigtae"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/max_temp_tv"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_12ssp"
-            android:text="30 cntigtae"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout
-            android:gravity="center_vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/weather_tv"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_14ssp"
-                android:text="30 cntigtae"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/weather_desc_tv"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_14ssp"
-                android:text="30 cntigtae"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/time_tv"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp"
-            android:text="30 cntigtae"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/parent_recycler"
+        android:layout_height="wrap_content" />
 
 </com.google.android.material.card.MaterialCardView>
